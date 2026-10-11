@@ -1,8 +1,8 @@
 # Solo Maintainer Guardrails & Anti-Bloat Audit Report
 
-**Generated:** `2026-10-10 19:34:56Z`
-**Audit Mode:** `Standard`
-**Verdict:** ![Status](https://img.shields.io/badge/Solo_Maintainer_Audit-PASSING-brightgreen)
+**Generated:** `2026-10-11 18:59:42Z`
+**Audit Mode:** `Strict`
+**Verdict:** ![Status](https://img.shields.io/badge/Solo_Maintainer_Audit-FAILED-red)
 
 ## Executive Summary
 
@@ -10,7 +10,7 @@ This automated scorecard enforces the **EthoPipe Solo Maintainer Charter**: prot
 
 | Pillar | Status | Passed | Issues |
 | :--- | :---: | :---: | :---: |
-| Language Monoculture | ✅ PASS | 2/2 | 0 |
+| Language Monoculture | ❌ FAIL | 0/2 | 2 |
 | Dependency & Supply Chain Budget | ✅ PASS | 3/3 | 0 |
 | Agent Plugin & Skill Hygiene | ✅ PASS | 2/2 | 0 |
 | Architectural Simplicity & Cognitive Budget | ✅ PASS | 2/2 | 0 |
@@ -22,19 +22,140 @@ This automated scorecard enforces the **EthoPipe Solo Maintainer Charter**: prot
 
 ### Language Monoculture
 
-#### ✅ Foreign Package Managers
+#### ❌ Foreign Package Managers
 
 **Details:**
 ```text
-Zero secondary package managers (npm, cargo, go) detected.
+Forbidden foreign package managers detected:
+  - `git-sync\go.mod` (Go module manifest)
 ```
+**Action Required:** Remove secondary language manifests. Maintain pure Python.
 
-#### ✅ Pure Python Source Monoculture
+#### ❌ Pure Python Source Monoculture
 
 **Details:**
 ```text
-Codebase adheres to 100% Python monoculture (no polyglot sprawl).
+Unauthorized non-Python source files detected:
+  - `git-sync\client.go` (Go runtime and compilation overhead)
+  - `git-sync\client_test.go` (Go runtime and compilation overhead)
+  - `git-sync\doc.go` (Go runtime and compilation overhead)
+  - `git-sync\errors.go` (Go runtime and compilation overhead)
+  - `git-sync\errors_test.go` (Go runtime and compilation overhead)
+  - `git-sync\example_test.go` (Go runtime and compilation overhead)
+  - `git-sync\identity.go` (Go runtime and compilation overhead)
+  - `git-sync\identity_test.go` (Go runtime and compilation overhead)
+  - `git-sync\results.go` (Go runtime and compilation overhead)
+  - `git-sync\results_test.go` (Go runtime and compilation overhead)
+  - `git-sync\types.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\args_test.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\bootstrap.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\convert_sha256.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\convert_sha256_test.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\fetch.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\flags.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\flags_test.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\main.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\main_test.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\probe.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\root.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\syncplan.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\version.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\internal\sha256convert\sha256convert.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\internal\sha256convert\sha256convert_test.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync\internal\versioninfo\versioninfo.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync-bench\main.go` (Go runtime and compilation overhead)
+  - `git-sync\cmd\git-sync-bench\main_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\auth\auth.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\auth\auth_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\convert\convert.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\convert\convert_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\benchmark_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\capability.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\capability_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\commitparents.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\commitparents_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\conn.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\fetch.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\fetch_helpers_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\fetch_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\helper.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\helper_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\pktline.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\pktline_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\push.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\push_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\readers.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\readers_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\refnames.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\refnames_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\refs.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\refs_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\samesite.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\samesite_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\smarthttp.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\smarthttp_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\ssh.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\ssh_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\target_features.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\gitproto\target_features_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\benchmark_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\checkpoint.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\checkpoint_from_parents_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\checkpoint_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\exclude_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\include_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\planner.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\planner_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\relay.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\targetscope_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\planner\types.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\redact\redact.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\redact\redact_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\sanitize\sanitize.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\sanitize\sanitize_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\bootstrap\bootstrap.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\bootstrap\bootstrap_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\bootstrap\pack_observer.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\bootstrap\pack_observer_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\bootstrap\push_diagnostics.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\bootstrap\push_diagnostics_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\incremental\incremental.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\incremental\incremental_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\materialized\materialized.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\materialized\materialized_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\replicate\replicate.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\strategy\replicate\replicate_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\auth_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\benchmark_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\empty_scope_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\empty_source.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\empty_source_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\git_http_backend_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\integration_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\live_bootstrap_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\measurement.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\measurement_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\objectlimit.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\objectlimit_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\progress.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\progress_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\ssh_docker_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\ssh_integration_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\stats.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\syncer.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\syncer_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncer\throughput_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncertest\configguard.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\syncertest\repo.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\useragent\useragent.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\useragent\useragent_test.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\validation\validation.go` (Go runtime and compilation overhead)
+  - `git-sync\internal\validation\validation_test.go` (Go runtime and compilation overhead)
+  - `git-sync\unstable\client.go` (Go runtime and compilation overhead)
+  - `git-sync\unstable\client_test.go` (Go runtime and compilation overhead)
+  - `git-sync\unstable\doc.go` (Go runtime and compilation overhead)
 ```
+**Action Required:** Consolidate logic into standard library, FastAPI, or Pydantic.
 
 ### Dependency & Supply Chain Budget
 
@@ -56,7 +177,7 @@ Zero heavyweight (PyTorch/Spark) or broker (Celery/Kafka) deps.
 
 **Details:**
 ```text
-uv.lock is present and non-empty (433 KB).
+uv.lock is present and non-empty (436 KB).
 ```
 
 ### Agent Plugin & Skill Hygiene
