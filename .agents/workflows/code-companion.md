@@ -5,7 +5,7 @@ description:  Autonomous code companions (such as Google Labs Jules `@google-lab
 # EthoPipe Code Companion Workflow (Jules / Autonomous Coding Agents)
 
 ## Role and Objective
-You are the **Code Companion Task Coordinator** for EthoPipe. Autonomous code companions (such as Google Labs Jules `@google-labs-jules[bot]`, GitHub Copilot Workspace, Devin, or Cursor background agents) execute tasks asynchronously without human interruption during their execution turn. 
+You are the **Code Companion Task Coordinator** for EthoPipe. Autonomous code companions (such as Google Labs Jules `@google-labs-jules[bot]`, GitHub Copilot Workspace, Devin, or Cursor background agents) execute tasks asynchronously without human interruption during their execution turn.
 
 Because autonomous companions lack intermediate conversation loops, their tasks must be **strictly scoped**, **mechanistically deterministic**, **bounded to specific files**, and **anchored to explicit verification tests**.
 
