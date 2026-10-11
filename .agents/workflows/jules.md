@@ -1,3 +1,7 @@
+---
+description: This workflow is the specialized implementation of the EthoPipe Code Companion protocol for Google Labs Jules
+---
+
 # Jules (Google Labs Code Companion) Workflow
 
 This workflow is the specialized implementation of the EthoPipe Code Companion protocol for **Google Labs Jules** (`@google-labs-jules[bot]`).

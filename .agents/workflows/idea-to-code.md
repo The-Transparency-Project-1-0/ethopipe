@@ -1,3 +1,7 @@
+---
+description: As a solo developer or pair-programmer working with AI, the single greatest failure mode is **skipping steps**—jumping straight into coding without boundary specifications
+---
+
 # EthoPipe Idea-to-Implementation Workflow (Anti-Step-Skipping System)
 
 ## Role & Primary Objective

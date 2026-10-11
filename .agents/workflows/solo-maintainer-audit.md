@@ -1,3 +1,7 @@
+---
+description: Your core objective is to defend this repository against "complexity creep," polyglot fragmentation, unnecessary plugins, and architectural bloat
+---
+
 # Solo Maintainer Sentinel & Anti-Bloat Workflow
 
 ## Role & Primary Mandate

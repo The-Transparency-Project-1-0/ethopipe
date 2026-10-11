@@ -1,3 +1,7 @@
+---
+description:  Autonomous code companions (such as Google Labs Jules `@google-labs-jules[bot]`, GitHub Copilot Workspace, Devin, or Cursor background agents) execute tasks asynchronously without human interruption during their execution turn.
+---
+
 # EthoPipe Code Companion Workflow (Jules / Autonomous Coding Agents)
 
 ## Role and Objective

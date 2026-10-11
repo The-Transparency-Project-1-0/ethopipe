@@ -1,3 +1,7 @@
+---
+description: Releasing a scientific Python package requires exact synchronization across version manifests, citations, changelogs, lockfiles, and git tags
+---
+
 # EthoPipe Release Governance & Packaging Workflow
 
 ## Role & Primary Mandate

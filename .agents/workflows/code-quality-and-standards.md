@@ -1,3 +1,7 @@
+---
+description: Your objective is to ensure that all code contributed to EthoPipe satisfies institutional-grade software engineering benchmarks, scientific reproducibility requirements (JOSS / EBAC), and open-source repository governance (OSI, FAIR Data Principles).
+---
+
 # EthoPipe Code Quality & Open Source Standards Workflow
 
 ## Role & Primary Objective
