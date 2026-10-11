@@ -1,7 +1,7 @@
 # Solo Maintainer Guardrails & Anti-Bloat Audit Report
 
-**Generated:** `2026-10-11 18:59:42Z`
-**Audit Mode:** `Strict`
+**Generated:** `2026-10-11 19:02:18Z`
+**Audit Mode:** `Standard`
 **Verdict:** ![Status](https://img.shields.io/badge/Solo_Maintainer_Audit-FAILED-red)
 
 ## Executive Summary
