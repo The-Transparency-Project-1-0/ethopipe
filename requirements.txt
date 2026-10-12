@@ -9,6 +9,6 @@ pre-commit==4.6.2
 ruff==0.16.10
 pytest-cov==7.1.0
 httpx==0.28.1
-hypothesis==6.168.3
+hypothesis==6.168.5
 mypy==2.4.0
 pandas-stubs==3.0.5.260914
