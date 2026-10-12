@@ -448,6 +448,13 @@ def main() -> None:
     report_file.write_text(report_content, encoding="utf-8")
     print(f"\n[✓] Compliance report written to: {report_file}")
 
+    archive_dir = project_root / "docs" / "audits"
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    archive_path = archive_dir / f"OPEN_SOURCE_COMPLIANCE_{timestamp_str}.md"
+    archive_path.write_text(report_content, encoding="utf-8")
+    print(f"[✓] Archived compliance report saved to: {archive_path}")
+
     if args.json:
         print(json.dumps(audit.results, indent=2))
 
