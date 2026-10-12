@@ -1,4 +1,5 @@
 from unittest.mock import patch
+from urllib.parse import urlparse
 
 import pytest
 import sentry_sdk
@@ -41,7 +42,11 @@ def test_sentry_sdk_initialized():
     options = sentry_client.options
     assert options.get("traces_sample_rate") == 1.0
     assert options.get("send_default_pii") is True
-    assert "ingest.us.sentry.io" in options.get("dsn", "")
+    parsed_dsn = urlparse(options.get("dsn", ""))
+    assert parsed_dsn.hostname is not None
+    assert parsed_dsn.hostname == "ingest.us.sentry.io" or parsed_dsn.hostname.endswith(
+        ".ingest.us.sentry.io"
+    )
 
 
 def test_run_ethopipe_agent_spans_and_conversations():
