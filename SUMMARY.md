@@ -17,6 +17,7 @@
 * [Security Policy](SECURITY.md)
 
 ## Development Workflows
+* [Project Goals & State Management](docs/PROJECT_STATE.md)
 * [Step-Gated Ideas & Development Board](docs/IDEAS_BOARD.md)
 * [Cross-Model Agent Handoff Workflow](docs/AGENT_HANDOFF_WORKFLOW.md)
 * [Autonomous Code Companion Workflow](docs/CODE_COMPANION_WORKFLOW.md)

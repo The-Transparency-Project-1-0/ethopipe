@@ -48,6 +48,15 @@ EthoPipe is strictly governed by the Solo Maintainer Charter to prevent cognitiv
 4. **Skill Hygiene**: Do not install enterprise cloud skills (BigQuery, Spark, Composer, Dataflow) in `.agents/skills`.
 5. **Audit Enforcement**: Run `python scripts/audit_maintainer_guardrails.py` (or `.\scripts\run_qa.ps1`) before submitting or approving changes.
 
+## Project Goals, Active State & Session Checkpoints
+
+To easily pause, resume, and track development stopping points without cognitive friction:
+
+1. **Inspect Current State**: Run `.\scripts\state.ps1` or `python scripts/manage_project_state.py status`.
+2. **Create Stopping Point Checkpoint**: Run `.\scripts\state.ps1 -Checkpoint -Focus "<Focus>" -StoppedAt "<Where Work Stopped>" -NextStep "<Immediate Next Action>"`.
+3. **Review Dated Checkpoint History**: Inspect `docs/states/` or run `.\scripts\state.ps1 -History`.
+4. **Live State Document**: See `docs/PROJECT_STATE.md` for active goals roadmap and current focus.
+
 ## Walkthrough & Task Protocol (Mandatory)
 
 Every AI coding assistant (Gemini, Claude, GPT, Cursor) working in EthoPipe MUST strictly uphold the Task & Walkthrough invariant:
