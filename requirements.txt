@@ -1,10 +1,10 @@
-fastapi==0.143.0
-pydantic==2.14.0
-pandas==3.0.6
+fastapi==0.161.1
+pydantic==2.14.1
+pandas==3.1.0
 uvicorn==0.54.0
 pytest==9.1.1
-supabase==2.32.0
-ddtrace==4.15.6
+supabase==2.33.0
+ddtrace==4.16.0
 pre-commit==4.6.2
 ruff==0.16.10
 pytest-cov==7.1.0

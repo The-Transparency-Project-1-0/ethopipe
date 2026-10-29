@@ -75,7 +75,7 @@ def test_ingest_incident_authenticated(monkeypatch):
     )
 
 
-def test_ingest_incident_unconfigured_credentials(monkeypatch):
+def test_ingest_incident_unconfigured_credentials(monkeypatch, sentry_events):
     monkeypatch.delenv("API_USERNAME", raising=False)
     monkeypatch.delenv("API_PASSWORD", raising=False)
     payload = get_valid_observation_payload()
@@ -84,6 +84,20 @@ def test_ingest_incident_unconfigured_credentials(monkeypatch):
     assert response.json() == {
         "detail": "Internal Server Error",
     }
+
+    # The misconfiguration must still be reported to Sentry, but captured
+    # locally (in-memory transport) and tagged as a test event.
+    events = sentry_events.events()
+    exception_events = [
+        e
+        for e in events
+        if any(
+            v.get("type") == "HTTPException"
+            for v in e.get("exception", {}).get("values", [])
+        )
+    ]
+    assert exception_events
+    assert all(e.get("environment") == "test" for e in exception_events)
 
 
 def test_ingest_invalid_heart_rate(monkeypatch):
