@@ -1,6 +1,6 @@
-fastapi==0.142.2
-pydantic==2.13.5
-pandas==3.0.6
+fastapi==0.161.1
+pydantic==2.14.1
+pandas==3.1.0
 uvicorn==0.54.0
 pytest==9.1.1
 supabase==2.31.0
@@ -9,6 +9,6 @@ pre-commit==4.6.2
 ruff==0.16.10
 pytest-cov==7.1.0
 httpx==0.28.1
-hypothesis==6.168.3
+hypothesis==6.168.5
 mypy==2.4.0
 pandas-stubs==3.0.5.260914

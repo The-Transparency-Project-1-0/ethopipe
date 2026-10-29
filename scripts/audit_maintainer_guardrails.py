@@ -657,8 +657,16 @@ class SoloMaintainerAudit:
             ]
         )
 
-        report_path.write_text("\n".join(md) + "\n", encoding="utf-8")
+        report_content = "\n".join(md) + "\n"
+        report_path.write_text(report_content, encoding="utf-8")
         print(f"{CYAN}[✓] Audit report written to: {report_path}{RESET}")
+
+        archive_dir = self.root / "docs" / "audits"
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        archive_path = archive_dir / f"SOLO_MAINTAINER_AUDIT_{timestamp_str}.md"
+        archive_path.write_text(report_content, encoding="utf-8")
+        print(f"{CYAN}[✓] Archived audit report saved to: {archive_path}{RESET}")
 
 
 def main() -> int:
